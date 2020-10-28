@@ -43,7 +43,6 @@ class NewsList extends React.Component {
     const { articlesArray } = this.state;
     return (
       <div>
-        <h1>WildNews</h1>
         {articlesArray.map((article) => {
           return (
             <Card

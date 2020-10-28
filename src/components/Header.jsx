@@ -1,7 +1,8 @@
 import logo from './wildnewsLogo.png';
+import './Header.css';
 
 function Header() {
-  return <img src={logo} alt="Logo" />;
+  return <img className="logo" src={logo} alt="Logo" />;
 }
 
 export default Header;
