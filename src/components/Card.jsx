@@ -1,6 +1,7 @@
 // import React from 'react';
 import PropTypes from 'prop-types';
 
+// Cette fonction crée une Card pour un article
 function Card({ image, title, url, description }) {
   return (
     <div>
@@ -15,11 +16,21 @@ function Card({ image, title, url, description }) {
   );
 }
 
+// Declaration des propTypes par défaut.
+Card.defaultProps = {
+  url: '',
+  title: '',
+  description: '',
+  image: '',
+};
+
+// Declaration des propTypes
+// Il faudra les passer en isRiquired et gérer les null
 Card.propTypes = {
-  url: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
+  url: PropTypes.string,
+  title: PropTypes.string,
+  description: PropTypes.string,
+  image: PropTypes.string,
 };
 
 export default Card;
