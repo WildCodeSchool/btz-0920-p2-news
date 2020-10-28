@@ -1,16 +1,19 @@
 // import React from 'react';
 import PropTypes from 'prop-types';
+import './Card.css';
 
 // Cette fonction crée une Card pour un article
 function Card({ image, title, url, description }) {
   return (
-    <div>
-      <img style={{ width: '100%' }} src={image} alt={title} />
-      <div>
+    <div className="card">
+      <div className="header">
+        <img style={{ width: '100%' }} src={image} alt={title} />
         <a className="title" href={url}>
           {title}
         </a>
-        <p className="description">{description}</p>
+      </div>
+      <div className="description">
+        <p>{description}</p>
       </div>
     </div>
   );

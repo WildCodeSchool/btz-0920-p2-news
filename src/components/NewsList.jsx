@@ -21,7 +21,7 @@ class NewsList extends React.Component {
     // Send the request
     axios
       .get(
-        'https://newsapi.org/v2/top-headlines?country=us&apiKey=78050e6ed06b44eabff4ee83ec5e7864'
+        'http://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=78050e6ed06b44eabff4ee83ec5e7864'
       )
       // Extract the DATA from the received response
       .then((response) => response.data)
