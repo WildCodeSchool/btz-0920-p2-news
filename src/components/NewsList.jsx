@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Card from './Card';
+import './MainHome.css';
 
 // Ce composant crée une liste de News provenant de l'API
 class NewsList extends React.Component {
@@ -21,7 +22,7 @@ class NewsList extends React.Component {
     // Send the request
     axios
       .get(
-        'https://newsapi.org/v2/top-headlines?country=us&apiKey=78050e6ed06b44eabff4ee83ec5e7864'
+        'http://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=78050e6ed06b44eabff4ee83ec5e7864'
       )
       // Extract the DATA from the received response
       .then((response) => response.data)
@@ -42,15 +43,16 @@ class NewsList extends React.Component {
   render() {
     const { articlesArray } = this.state;
     return (
-      <div>
-        <h1>WildNews</h1>
+      <div className="newslist">
         {articlesArray.map((article) => {
           return (
             <Card
               image={article.urlToImage}
-              url={article.url}
-              description={article.description}
               title={article.title}
+              url={article.url}
+              date={article.publishedAt}
+              source={article.source.name}
+              description={article.description}
               key={article.title}
             />
           );
