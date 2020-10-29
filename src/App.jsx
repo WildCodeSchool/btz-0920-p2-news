@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <Header />
       <MyCarousel />
-      <MainHome className="App-header" /> 
+      <MainHome className="App-header" />
       <Navbar />
     </div>
   );
