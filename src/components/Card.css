@@ -12,7 +12,9 @@ body {
 
 .card {
   margin: 20px;
-  box-shadow: 5px 5px 5px #545454;
+  max-width: 500px;
+  min-width: 250px;
+  box-shadow: 5px 5px 10px #545454;
   background-color: white;
 }
 
@@ -30,7 +32,7 @@ body {
   font-weight: 800;
   color: rgb(255, 255, 255);
   text-decoration: none;
-  text-shadow: -1px -1px #545454, 1px 1px #333;
+  text-shadow: 1px 1px 1px #545454;
 }
 
 .title:hover {
@@ -42,7 +44,13 @@ body {
 }
 
 .description {
-  padding: 10px;
+  text-align: left;
+  padding: 10px 25px;
   font-size: 1em;
   color: #545454;
+}
+
+.detail {
+  font-size: 0.8em;
+  color: #070707;
 }

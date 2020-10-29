@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './Card.css';
 
 // Cette fonction crée une Card pour un article
-function Card({ image, title, url, description }) {
+function Card({ image, title, url, description, date, source }) {
   return (
     <div className="card">
       <div className="header">
@@ -13,6 +13,9 @@ function Card({ image, title, url, description }) {
         </a>
       </div>
       <div className="description">
+        <span className="detail">
+          From : {source} &nbsp;&nbsp;&nbsp;Published : {date}
+        </span>
         <p>{description}</p>
       </div>
     </div>
@@ -25,6 +28,8 @@ Card.defaultProps = {
   title: '',
   description: '',
   image: '',
+  date: '',
+  source: '',
 };
 
 // Declaration des propTypes
@@ -34,6 +39,8 @@ Card.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   image: PropTypes.string,
+  date: PropTypes.string,
+  source: PropTypes.string,
 };
 
 export default Card;
