@@ -1,12 +1,16 @@
 import './App.css';
-import NewsList from './components/NewsList';
+
+
 import Navbar from './components/Navbar';
+import MainHome from './components/MainHome';
+
 
 function App() {
   return (
     <div className="App">
-      <NewsList />
       <Navbar />
+      <MainHome className="App-header" />
+
     </div>
   );
 }
