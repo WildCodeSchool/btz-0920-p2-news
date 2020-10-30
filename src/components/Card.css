@@ -11,7 +11,7 @@ body {
 }
 
 .card {
-  margin: 20px;
+  margin: 5px;
   max-width: 500px;
   min-width: 250px;
   box-shadow: 5px 5px 10px #545454;
@@ -26,8 +26,8 @@ body {
   display: block;
   text-align: left;
   position: absolute;
-  bottom: 25px;
-  left: 25px;
+  bottom: 0px;
+  margin: 25px;
   font-size: 1.5em;
   font-weight: 800;
   color: rgb(255, 255, 255);
@@ -51,6 +51,14 @@ body {
 }
 
 .detail {
+  display: block;
+  text-align: left;
+  position: absolute;
+  bottom: 0px;
+  margin: 5px 25px;
   font-size: 0.8em;
-  color: #070707;
+  font-weight: 800;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  text-shadow: 1px 1px 1px #545454;
 }
