@@ -6,16 +6,11 @@
   color: #A1E8CC; Vert
 } */
 
-body {
-  background-color: #f5cb5c;
-}
-
 .card {
   margin: 5px;
   max-width: 500px;
   min-width: 250px;
   box-shadow: 5px 5px 10px #545454;
-  background-color: white;
 }
 
 .header {
