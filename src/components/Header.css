@@ -7,3 +7,10 @@
   background-image: url('./background.png');
   background-size: cover;
 }
+
+.trends {
+  display: flex;
+  width: 50px;
+  padding-left: 10px;
+  padding-top: 10px;
+}
