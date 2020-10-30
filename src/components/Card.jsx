@@ -3,7 +3,10 @@ import PropTypes from 'prop-types';
 import './Card.css';
 
 // Cette fonction crée une Card pour un article
-function Card({ image, title, url, description, date, source }) {
+function Card({ image, title, url, date, source }) {
+  const articleDate = new Date(date);
+  // eslint-disable-next-line no-console
+  console.log(articleDate);
   return (
     <div className="card">
       <div className="header">
@@ -11,12 +14,10 @@ function Card({ image, title, url, description, date, source }) {
         <a className="title" href={url}>
           {title}
         </a>
-      </div>
-      <div className="description">
         <span className="detail">
-          From : {source} &nbsp;&nbsp;&nbsp;Published : {date}
+          De : {source} &nbsp;&nbsp;&nbsp; Publié le :
+          {articleDate.toLocaleDateString()}
         </span>
-        <p>{description}</p>
       </div>
     </div>
   );
@@ -26,7 +27,6 @@ function Card({ image, title, url, description, date, source }) {
 Card.defaultProps = {
   url: '',
   title: '',
-  description: '',
   image: '',
   date: '',
   source: '',
@@ -37,7 +37,6 @@ Card.defaultProps = {
 Card.propTypes = {
   url: PropTypes.string,
   title: PropTypes.string,
-  description: PropTypes.string,
   image: PropTypes.string,
   date: PropTypes.string,
   source: PropTypes.string,
