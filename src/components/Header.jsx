@@ -17,10 +17,8 @@ function Header() {
       </nav>
       <img className="logo" src={logo} alt="Logo" />
     </header>
-    <div className="background">
-      <img className="logo" src={logo} alt="Logo" />
-    </div>
   );
 }
 
 export default Header;
+
