@@ -1,0 +1,64 @@
+/* * {
+  color: #F5CB5C; Jaune
+  color: #070707; Noir
+  color: #545454; Gris
+  color: #82A6B1; Bleu
+  color: #A1E8CC; Vert
+} */
+
+body {
+  background-color: #f5cb5c;
+}
+
+.card {
+  margin: 5px;
+  max-width: 500px;
+  min-width: 250px;
+  box-shadow: 5px 5px 10px #545454;
+  background-color: white;
+}
+
+.header {
+  position: relative;
+}
+
+.title {
+  display: block;
+  text-align: left;
+  position: absolute;
+  bottom: 0px;
+  margin: 25px;
+  font-size: 1.5em;
+  font-weight: 800;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  text-shadow: 1px 1px 1px #545454;
+}
+
+.title:hover {
+  color: #82a6b1;
+}
+
+.title:visited {
+  color: #a1e8cc;
+}
+
+.description {
+  text-align: left;
+  padding: 10px 25px;
+  font-size: 1em;
+  color: #545454;
+}
+
+.detail {
+  display: block;
+  text-align: left;
+  position: absolute;
+  bottom: 0px;
+  margin: 5px 25px;
+  font-size: 0.8em;
+  font-weight: 800;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  text-shadow: 1px 1px 1px #545454;
+}

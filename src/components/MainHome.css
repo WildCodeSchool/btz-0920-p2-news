@@ -1,0 +1,6 @@
+.newslist {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: #f5cb5c;
+}
