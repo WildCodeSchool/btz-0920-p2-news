@@ -6,20 +6,19 @@
   color: #A1E8CC; Vert
 } */
 
-body {
-  background-color: #f5cb5c;
-}
-
 .card {
   margin: 5px;
   max-width: 500px;
   min-width: 250px;
   box-shadow: 5px 5px 10px #545454;
-  background-color: white;
 }
 
 .header {
   position: relative;
+}
+
+.image {
+  width: 100%;
 }
 
 .title {
@@ -32,7 +31,7 @@ body {
   font-weight: 800;
   color: rgb(255, 255, 255);
   text-decoration: none;
-  text-shadow: 1px 1px 1px #545454;
+  text-shadow: 1px 1px 3px #545454;
 }
 
 .title:hover {

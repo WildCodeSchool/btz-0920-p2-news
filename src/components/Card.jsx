@@ -5,12 +5,10 @@ import './Card.css';
 // Cette fonction crée une Card pour un article
 function Card({ image, title, url, date, source }) {
   const articleDate = new Date(date);
-  // eslint-disable-next-line no-console
-  console.log(articleDate);
   return (
     <div className="card">
       <div className="header">
-        <img style={{ width: '100%' }} src={image} alt={title} />
+        <img className="image" src={image} alt={title} />
         <a className="title" href={url}>
           {title}
         </a>
