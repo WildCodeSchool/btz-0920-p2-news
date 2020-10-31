@@ -31,7 +31,7 @@
   font-weight: 800;
   color: rgb(255, 255, 255);
   text-decoration: none;
-  text-shadow: 1px 1px 1px #545454;
+  text-shadow: 1px 1px 3px #545454;
 }
 
 .title:hover {

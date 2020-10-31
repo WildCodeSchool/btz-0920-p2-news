@@ -3,15 +3,16 @@ import Axios from 'axios';
 import NewsList from './NewsList';
 import MyCarousel from './MyCarousel';
 
+const category = 'category=sports&';
+const country = 'country=fr&';
+const apiTop = 'http://newsapi.org/v2/top-headlines?';
+const keyAlbin = 'apiKey=e6339d9c525446cc9b6c27d6fbd39e88';
+const frURL = ` ${apiTop}${country}${category}${keyAlbin} `;
+
 const MainHome = () => {
   const [articlesArray, setArticlesArray] = useState([]);
 
   useEffect(() => {
-    const country = 'country=fr&';
-    const category = 'category=sports&';
-    const apiTop = 'http://newsapi.org/v2/top-headlines?';
-    const keyAlbin = 'apiKey=e6339d9c525446cc9b6c27d6fbd39e88';
-    const frURL = ` ${apiTop}${country}${category}${keyAlbin} `;
     // Send the request
     Axios.get(frURL)
       // Extract the DATA from the received response
@@ -22,11 +23,11 @@ const MainHome = () => {
         console.log({ data });
         setArticlesArray(data.articles);
       });
-  });
+  }, []);
 
   return (
     <div>
-      <MyCarousel />
+      <MyCarousel articlesArray={articlesArray} />
       <NewsList articlesArray={articlesArray} />
     </div>
   );
