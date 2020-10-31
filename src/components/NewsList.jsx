@@ -1,31 +1,9 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import PropTypes from 'prop-types';
 import Card from './Card';
 import './MainHome.css';
 
 // Ce composant crée une liste de News provenant de l'API
-function NewsList() {
-  const [articlesArray, setArticlesArray] = useState([]);
-
-  useEffect(() => {
-    const country = 'country=fr&';
-    const category = 'category=sports&';
-    const apiTop = 'http://newsapi.org/v2/top-headlines?';
-    const keyAlbin = 'apiKey=e6339d9c525446cc9b6c27d6fbd39e88';
-    const frURL = ` ${apiTop}${country}${category}${keyAlbin} `;
-    // Send the request
-    axios
-      .get(frURL)
-      // Extract the DATA from the received response
-      .then((response) => response.data)
-      // Use this data to update the state
-      .then((data) => {
-        // eslint-disable-next-line no-console
-        console.log({ data });
-        setArticlesArray(data);
-      });
-  });
-
+function NewsList({ articlesArray }) {
   return (
     <div className="newslist">
       {articlesArray.map((article) => {
@@ -44,5 +22,14 @@ function NewsList() {
     </div>
   );
 }
+
+NewsList.defaultProps = {
+  articlesArray: [],
+};
+
+NewsList.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
+  articlesArray: PropTypes.array,
+};
 
 export default NewsList;
