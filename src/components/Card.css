@@ -17,6 +17,10 @@
   position: relative;
 }
 
+.image {
+  width: 100%;
+}
+
 .title {
   display: block;
   text-align: left;
