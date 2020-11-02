@@ -7,28 +7,27 @@ import {
   NavItem,
   NavLink,
 } from 'reactstrap';
+import './Navbar.css';
 
 const TapBar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggle = () => setIsOpen(!isOpen);
+  const toggleNavbar = () => setIsOpen(!isOpen);
 
   return (
-    <div>
-      <Navbar color="light" light expand="md">
-        <NavbarToggler onClick={toggle} />
-        <Collapse isOpen={isOpen} navbar>
-          <Nav className="mr-auto" navbar>
+    <div className="Navbar">
+      <Navbar color="faded" light>
+        <NavbarToggler onClick={toggleNavbar} className="mr-2" />
+        <Collapse isOpen={!isOpen} navbar>
+          <Nav navbar>
             <NavItem>
-              <NavLink href="/components/">User</NavLink>
+              <NavLink>Profile</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/components/">Trend</NavLink>
+              <NavLink>Tendances</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="https://github.com/reactstrap/reactstrap">
-                Categories
-              </NavLink>
+              <NavLink>Categorie</NavLink>
             </NavItem>
           </Nav>
         </Collapse>
