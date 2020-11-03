@@ -1,0 +1,9 @@
+.background {
+  background-image: url('./background.png');
+  background-size: cover;
+}
+
+.footerMain {
+  display: flex;
+  justify-content: space-between;
+}
