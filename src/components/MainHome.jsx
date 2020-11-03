@@ -1,32 +1,33 @@
 import { useEffect, useState } from 'react';
 import Axios from 'axios';
-import NewsList from './NewsList';
-import MyCarousel from './MyCarousel';
 
-const category = 'category=sports&';
-const country = 'country=fr&';
-const apiTop = 'http://newsapi.org/v2/top-headlines?';
-const keyAlbin = 'apiKey=e6339d9c525446cc9b6c27d6fbd39e88';
-const frURL = ` ${apiTop}${country}${category}${keyAlbin} `;
+import { apiUrl, apiKey } from '../api';
+
+import MyCarousel from './MyCarousel';
+import Filter from './Filter';
+import NewsList from './NewsList';
 
 const MainHome = () => {
   const [articlesArray, setArticlesArray] = useState([]);
+  const [currentCat, setCurrentCat] = useState('general');
 
   useEffect(() => {
     // Send the request
-    Axios.get(frURL)
-      // Extract the DATA from the received response
-      .then((response) => response.data)
-      // Use this data to update the state
-      .then((data) => {
-        // eslint-disable-next-line no-console
-        console.log({ data });
-        setArticlesArray(data.articles);
-      });
-  }, []);
+
+    return (
+      Axios.get(`${apiUrl}&category=${currentCat}&apiKey=${apiKey}`)
+        // Extract the DATA from the received response
+        .then((response) => {
+          // eslint-disable-next-line no-console
+          console.log(response.data);
+          setArticlesArray(response.data.articles);
+        })
+    );
+  }, [currentCat]);
 
   return (
     <div>
+      <Filter setCurrentCat={setCurrentCat} currentCat={currentCat} />
       <MyCarousel articlesArray={articlesArray} />
       <NewsList articlesArray={articlesArray} />
     </div>
