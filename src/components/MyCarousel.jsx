@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import {
   Carousel,
@@ -9,20 +9,23 @@ import {
 } from 'reactstrap';
 
 const MyCarousel = ({ articlesArray }) => {
+  const [articles, setArticles] = useState([]);
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
 
+  useEffect(() => {
+    setArticles([...articlesArray].splice(0, 3));
+  }, [articlesArray]);
+
   const next = () => {
     if (animating) return;
-    const nextIndex =
-      activeIndex === articlesArray.length - 1 ? 0 : activeIndex + 1;
+    const nextIndex = activeIndex === articles.length - 1 ? 0 : activeIndex + 1;
     setActiveIndex(nextIndex);
   };
 
   const previous = () => {
     if (animating) return;
-    const nextIndex =
-      activeIndex === 0 ? articlesArray.length - 1 : activeIndex - 1;
+    const nextIndex = activeIndex === 0 ? articles.length - 1 : activeIndex - 1;
     setActiveIndex(nextIndex);
   };
 
@@ -31,23 +34,23 @@ const MyCarousel = ({ articlesArray }) => {
     setActiveIndex(newIndex);
   };
 
-  const slides = articlesArray.map((articles) => {
+  const slides = articles.map((article) => {
     return (
       <CarouselItem
         className="custom-tag"
         onExiting={() => setAnimating(true)}
         onExited={() => setAnimating(false)}
-        key={articles.title}
+        key={article.title}
       >
         <img
           // Add style as CSS in JS by Raph
           style={{ width: '100%' }}
-          src={articles.urlToImage}
-          alt={articles.title}
+          src={article.urlToImage}
+          alt={article.title}
         />
         <CarouselCaption
-          // captionText={articles.title}
-          captionHeader={articles.title}
+          // captionText={article.title}
+          captionHeader={article.title}
         />
       </CarouselItem>
     );
@@ -64,7 +67,7 @@ const MyCarousel = ({ articlesArray }) => {
       </style>
       <Carousel activeIndex={activeIndex} next={next} previous={previous}>
         <CarouselIndicators
-          items={articlesArray}
+          items={articles}
           activeIndex={activeIndex}
           onClickHandler={goToIndex}
         />
