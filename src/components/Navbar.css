@@ -1,16 +1,22 @@
 .user-icon {
-  width: 30px;
+  width: 25px;
   height: 100%;
+  margin-right: 15px;
+  margin-left: 15px;
 }
 
 .trend-icon {
-  width: 30px;
+  width: 25px;
   height: 100%;
+  margin-right: 15px;
+  margin-left: 15px;
 }
 
 .cat-icon {
-  width: 30px;
+  width: 25px;
   height: 100%;
+  margin-right: 15px;
+  margin-left: 15px;
 }
 
 .Navbar {
@@ -21,4 +27,25 @@
   width: 100%;
   display: flex;
   justify-content: space-evenly;
+}
+
+.btn {
+  background-position: center;
+  transition: background 0.8s;
+}
+.btn:hover {
+  background: #f0eeee
+    radial-gradient(circle, transparent 1%, rgb(146, 145, 145) 1%) center/15000%;
+}
+.btn:active {
+  background-color: grey;
+  transition: background 0s;
+}
+
+/* Button style */
+button {
+  border: none;
+  border-radius: 150px;
+  padding: 12px 18px;
+  box-shadow: 0 0 4px #999;
 }
