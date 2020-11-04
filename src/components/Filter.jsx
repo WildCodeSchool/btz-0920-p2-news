@@ -34,16 +34,13 @@ function Filter({ setCurrentCat, currentCat }) {
     },
   ]);
 
-  const handleCat = (category) => {
-    setCurrentCat(category);
-  };
   return (
     <div>
       {categories.map((cat) => {
         return (
           <Button
             key={cat.value}
-            onClick={() => handleCat(cat.value)}
+            onClick={() => setCurrentCat(cat.value)}
             outline={cat.value !== currentCat}
             color="danger"
           >
@@ -55,12 +52,8 @@ function Filter({ setCurrentCat, currentCat }) {
   );
 }
 
-Filter.defaultProps = {
-  setCurrentCat: '',
-};
-
 Filter.propTypes = {
-  setCurrentCat: PropTypes.func,
+  setCurrentCat: PropTypes.func.isRequired,
   currentCat: PropTypes.string.isRequired,
 };
 

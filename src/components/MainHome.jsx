@@ -12,17 +12,11 @@ const MainHome = () => {
   const [currentCat, setCurrentCat] = useState('general');
 
   useEffect(() => {
-    // Send the request
-
-    return (
-      Axios.get(`${apiUrl}&category=${currentCat}&apiKey=${apiKey}`)
-        // Extract the DATA from the received response
-        .then((response) => {
-          // eslint-disable-next-line no-console
-          console.log(response.data);
-          setArticlesArray(response.data.articles);
-        })
-    );
+    Axios.get(`${apiUrl}&category=${currentCat}&apiKey=${apiKey}`)
+      // Extract the DATA from the received response
+      .then((response) => {
+        setArticlesArray(response.data.articles);
+      });
   }, [currentCat]);
 
   return (

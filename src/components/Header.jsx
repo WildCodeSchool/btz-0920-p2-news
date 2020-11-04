@@ -1,7 +1,4 @@
-import logo from './wildnewsLogo.png';
-import trends from './trends.png';
-import user from './user.png';
-import search from './search.png';
+import { wildnewsLogo, trends, user, search } from '../images';
 
 import './Header.css';
 
@@ -15,7 +12,7 @@ function Header() {
           <img className="search" src={search} alt="search" />
         </div>
       </nav>
-      <img className="logo" src={logo} alt="Logo" />
+      <img className="logo" src={wildnewsLogo} alt="Logo" />
     </header>
   );
 }
