@@ -1,8 +1,16 @@
+// import { NavigationContainer } from '@react-navigation/native';
+
+// import { createDrawerNavigator } from 'react-navigation-drawer';
+
 import './App.css';
 import MyCarousel from './components/MyCarousel';
 import Header from './components/Header';
-import TapBar from './components/Navbar';
+import Navigation from './components/Navbar';
 import MainHome from './components/MainHome';
+
+// import MainTabScreen from './Screens/MainTabScreen';
+
+// const Drawer = createDrawerNavigator();
 
 function App() {
   return (
@@ -10,7 +18,12 @@ function App() {
       <Header />
       <MyCarousel />
       <MainHome className="App-header" />
-      <TapBar />
+      <Navigation />
+      {/* <NavigationContainer>
+        <Drawer.Navigator initialRouteName="Home">
+          <Drawer.Screen name="Home" component={MainTabScreen} />
+        </Drawer.Navigator>
+      </NavigationContainer> */}
     </div>
   );
 }
