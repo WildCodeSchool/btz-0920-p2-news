@@ -1,4 +1,4 @@
-.logo {
+.mainLogo {
   width: 50%;
   margin: 3% 0% 3% 0%;
 }
@@ -8,9 +8,9 @@
   background-size: cover;
 }
 
-.trends {
+.home {
   display: flex;
-  width: 55px;
+  width: 60px;
   padding-left: 10px;
   padding-top: 10px;
 }
