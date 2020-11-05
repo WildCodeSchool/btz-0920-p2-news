@@ -1,3 +1,11 @@
+import {
+  wildnewsLogo,
+  logoFacebook,
+  logoLinkedin,
+  logoTwitter,
+  logoYoutube,
+} from '../images';
+
 import './Footer.css';
 
 function Footer() {
@@ -5,17 +13,34 @@ function Footer() {
     <footer className="background">
       <div className="footerMain">
         <div className="leftArea">
-          <p>Footer Left Area</p>
+          <img className="logo" src={wildnewsLogo} alt="Logo" />
+          <p style={{ textAlign: 'justify' }}>
+            Retrouvez toute l&apos;actualité en continu sur WildNews.fr
+          </p>
         </div>
         <div className="middleArea">
-          <p> Footer Middle Area</p>
+          <p>NOUS CONTACTER</p>
+          <p>MENTIONS LEGALES</p>
+          <p>POLITIQUE DE CONFIDENTIALITE</p>
+          <p>CARRIERES</p>
         </div>
         <div className="rightArea">
-          <p> Footer Right Area</p>
+          <div>
+            <img src={logoFacebook} alt="Logo" />
+          </div>
+          <div>
+            <img src={logoLinkedin} alt="Logo" />
+          </div>
+          <div>
+            <img src={logoTwitter} alt="Logo" />
+          </div>
+          <div>
+            <img src={logoYoutube} alt="Logo" />
+          </div>
         </div>
       </div>
       <div className="baselineArea">
-        <p> Footer Baseline Area</p>
+        <p> COPYRIGHT © 2020 | WildNews</p>
       </div>
     </footer>
   );
