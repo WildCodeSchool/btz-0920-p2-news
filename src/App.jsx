@@ -5,7 +5,7 @@ import Header from './components/Header';
 import Navigation from './components/Navbar';
 import MainHome from './components/MainHome';
 
-import Pages from './components/Pages';
+// import Pages from './components/Pages';
 
 function App() {
   return (
@@ -14,7 +14,6 @@ function App() {
       <MyCarousel />
       <MainHome className="App-header" />
       <Navigation />
-      <Pages />
     </div>
   );
 }

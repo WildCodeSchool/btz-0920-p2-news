@@ -1,7 +1,7 @@
 import { Nav, NavItem, NavLink } from 'reactstrap';
 import './Navbar.css';
 
-import { Link, Router } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import user from './user.png';
 import category from './categorie.png';
@@ -13,13 +13,11 @@ const Navigation = () => {
     <div className="Navbar">
       <Nav className="navbar">
         <NavItem>
-          <Router>
-            <NavLink className="btn">
-              <Link to="/my-profile">
-                <img className="user-icon" src={user} alt="icon for profile" />
-              </Link>
-            </NavLink>
-          </Router>
+          <NavLink className="btn">
+            <Link to="/my-profile">
+              <img className="user-icon" src={user} alt="icon for profile" />
+            </Link>
+          </NavLink>
         </NavItem>
         <NavItem>
           <NavLink className="btn">
