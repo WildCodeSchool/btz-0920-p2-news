@@ -2,6 +2,7 @@ import './App.css';
 import Header from './components/Header';
 import Navbar from './components/Navbar';
 import MainHome from './components/MainHome';
+import Footer from './components/Footer';
 
 // CLEFS API
 // Raph : 78050e6ed06b44eabff4ee83ec5e7864
@@ -13,6 +14,7 @@ function App() {
       <Header />
       <MainHome className="App-header" />
       <Navbar />
+      <Footer />
     </div>
   );
 }
