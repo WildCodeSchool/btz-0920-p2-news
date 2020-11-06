@@ -10,7 +10,9 @@ function ArticlePreview({ image, title, url, index }) {
         <CardImg src={image} alt={title} />
         <CardImgOverlay>
           <CardTitle tag="h4" className="title">
-            <a href={url}>{title}</a>
+            <a className="linkColor" href={url}>
+              {title}
+            </a>
           </CardTitle>
         </CardImgOverlay>
       </Card>
