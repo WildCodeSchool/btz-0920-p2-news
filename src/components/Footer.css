@@ -1,4 +1,4 @@
-.background {
+.backgroundFooter {
   background-image: url('../images/background.png');
   background-size: cover;
 }
@@ -46,8 +46,8 @@ p {
   font-weight: bold;
 }
 
-@media screen and (max-width: 768px) {
-  footer {
+@media screen and (max-width: 758px) {
+  .backgroundFooter {
     display: none;
   }
 }

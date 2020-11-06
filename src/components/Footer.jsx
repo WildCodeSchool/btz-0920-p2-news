@@ -10,7 +10,7 @@ import './Footer.css';
 
 function Footer() {
   return (
-    <footer className="background">
+    <footer className="backgroundFooter">
       <div className="footerMain">
         <div className="leftArea">
           <img className="logo" src={wildnewsLogo} alt="Logo" />

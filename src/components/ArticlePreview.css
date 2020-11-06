@@ -26,7 +26,11 @@
   height: 100%;
 }
 
-a {
+.linkColor {
+  color: white;
+}
+
+.linkColor:hover {
   color: white;
 }
 
