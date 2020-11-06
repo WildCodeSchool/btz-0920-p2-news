@@ -14,9 +14,7 @@ const Navigation = () => {
       <Nav className="navbar">
         <NavItem>
           <NavLink className="btn">
-            <Link to="/my-profile">
-              <img className="user-icon" src={user} alt="icon for profile" />
-            </Link>
+            <img className="cat-icon" src={home} alt="icon for user" />
           </NavLink>
         </NavItem>
         <NavItem>
@@ -26,7 +24,9 @@ const Navigation = () => {
         </NavItem>
         <NavItem>
           <NavLink className="btn">
-            <img className="cat-icon" src={home} alt="icon for user" />
+            <Link to="/my-profile">
+              <img className="user-icon" src={user} alt="icon for profile" />
+            </Link>
           </NavLink>
         </NavItem>
         <NavItem>
