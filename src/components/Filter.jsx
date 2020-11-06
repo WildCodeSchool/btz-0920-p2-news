@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Button } from 'reactstrap';
 import PropTypes from 'prop-types';
+import './Filter.css';
 
 function Filter({ setCurrentCat, currentCat }) {
   const [categories] = useState([
@@ -35,14 +36,15 @@ function Filter({ setCurrentCat, currentCat }) {
   ]);
 
   return (
-    <div>
+    <div className="filterDiv">
       {categories.map((cat) => {
         return (
           <Button
+            className="buttons"
             key={cat.value}
             onClick={() => setCurrentCat(cat.value)}
             outline={cat.value !== currentCat}
-            color="danger"
+            color="warning"
           >
             {cat.label}
           </Button>
