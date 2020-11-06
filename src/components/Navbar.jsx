@@ -1,56 +1,42 @@
-import { useState } from 'react';
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  NavbarText,
-} from 'reactstrap';
+import { Nav, NavItem, NavLink } from 'reactstrap';
+import './Navbar.css';
 
-const TapBar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+import { Link } from 'react-router-dom';
 
-  const toggle = () => setIsOpen(!isOpen);
+import user from './user.png';
+import category from './categorie.png';
+import search from './search.png';
+import home from './home.png';
 
+const Navigation = () => {
   return (
-    <div>
-      <Navbar color="light" light expand="md">
-        <NavbarBrand href="/">reactstrap</NavbarBrand>
-        <NavbarToggler onClick={toggle} />
-        <Collapse isOpen={isOpen} navbar>
-          <Nav className="mr-auto" navbar>
-            <NavItem>
-              <NavLink href="/components/">Components</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="https://github.com/reactstrap/reactstrap">
-                GitHub
-              </NavLink>
-            </NavItem>
-            <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle nav caret>
-                Options
-              </DropdownToggle>
-              <DropdownMenu right>
-                <DropdownItem>Option 1</DropdownItem>
-                <DropdownItem>Option 2</DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem>Reset</DropdownItem>
-              </DropdownMenu>
-            </UncontrolledDropdown>
-          </Nav>
-          <NavbarText>Simple Text</NavbarText>
-        </Collapse>
-      </Navbar>
+    <div className="Navbar">
+      <Nav className="navbar">
+        <NavItem>
+          <NavLink className="btn">
+            <img className="cat-icon" src={home} alt="icon for user" />
+          </NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink className="btn">
+            <img className="trend-icon" src={category} alt="category icon" />
+          </NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink className="btn">
+            <Link to="/my-profile">
+              <img className="user-icon" src={user} alt="icon for profile" />
+            </Link>
+          </NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink className="btn">
+            <img className="cat-icon" src={search} alt="icon for search" />
+          </NavLink>
+        </NavItem>
+      </Nav>
     </div>
   );
 };
 
-export default TapBar;
+export default Navigation;
