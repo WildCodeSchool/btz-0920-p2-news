@@ -1,12 +1,15 @@
+import './Categories.css';
+
 function Categories() {
   return (
     <div>
-      <h1>Categories</h1>
-      <section>Général</section>
-      <section>Sport</section>
-      <section>Business</section>
-      <section>Santé</section>
-      <section>Divertissement</section>
+      <div className="section">
+        <section className="bloc">Général</section>
+        <section className="bloc">Sport</section>
+        <section className="bloc">Business</section>
+        <section className="bloc">Santé</section>
+        <section className="bloc">Divertissement</section>
+      </div>
     </div>
   );
 }
