@@ -26,20 +26,16 @@ const MainHome = () => {
       Axios.get(`${apiUrl}&pageSize=5&category=${cat.value}&apiKey=${apiKey}`)
     );
     // Génère un tableau d'objet contenant label et news de chaque catégorie
-    const newsForSelectedCategory = [];
-    Promise.all(promiseList).then((promises) =>
-      promises.forEach((cat, i) => {
-        newsForSelectedCategory.push({
+
+    Promise.all(promiseList).then((responses) => {
+      const nextState = responses.map((cat, i) => {
+        return {
           category: selectedCategory[i].label,
           news: cat.data.articles,
-        });
-        // Le tableau contenant les articles de chaque catégorie selectionnée
-        // est passé au state articleArray
-        setArticlesArray(newsForSelectedCategory);
-        // eslint-disable-next-line no-console
-        console.log(newsForSelectedCategory);
-      })
-    );
+        };
+      });
+      setArticlesArray(nextState);
+    });
   }, [currentCat]);
 
   return (
