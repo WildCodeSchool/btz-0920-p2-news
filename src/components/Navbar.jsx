@@ -20,13 +20,17 @@ const Navigation = () => {
           </NavLink>
         </NavItem>
         <NavItem>
-          <NavLink className="btn">
-            <img className="trend-icon" src={category} alt="category icon" />
-          </NavLink>
+          <Link to="/categories">
+            <NavLink className="btn">
+              <img className="trend-icon" src={category} alt="category icon" />
+            </NavLink>
+          </Link>
         </NavItem>
         <NavItem>
           <NavLink className="btn">
-            <img className="cat-icon" src={home} alt="icon for user" />
+            <Link to="/">
+              <img className="cat-icon" src={home} alt="icon for user" />
+            </Link>
           </NavLink>
         </NavItem>
         <NavItem>
