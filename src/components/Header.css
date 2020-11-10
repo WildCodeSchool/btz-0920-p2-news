@@ -1,9 +1,42 @@
-.logo {
+.mainLogo {
   width: 50%;
   margin: 3% 0% 3% 0%;
 }
 
 .background {
-  background-image: url('./background.png');
+  background-image: url('../images/background.png');
   background-size: cover;
+}
+
+.home {
+  display: flex;
+  width: 60px;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+.user {
+  width: 45px;
+  margin-right: 15px;
+}
+
+.search {
+  width: 45px;
+}
+
+.top-logo {
+  display: inline-block;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 768px) {
+  .trends,
+  .menu,
+  .home {
+    display: none;
+  }
 }

@@ -20,8 +20,8 @@ const Navigation = () => {
           </NavLink>
         </NavItem>
         <NavItem>
-          <Link to="/categories">
             <NavLink className="btn">
+              <Link to="/categories">
               <img className="trend-icon" src={category} alt="category icon" />
             </NavLink>
           </Link>
