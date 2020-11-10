@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 import { Container } from 'reactstrap';
 
-import Navigation from './Navbar';
+import Navigation from './Navigation';
+import Footer from './Footer';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import NewsList from './NewsList';
@@ -14,6 +15,7 @@ const Layout = ({ children }) => {
     <div>
       <Header />
       <Container>{children}</Container>
+      <Footer />
       <Navigation />
     </div>
   );
