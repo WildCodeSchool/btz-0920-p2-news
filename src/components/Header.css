@@ -1,6 +1,9 @@
 .mainLogo {
   width: 50%;
-  margin: 3% 0% 3% 0%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 40px;
 }
 
 .background {

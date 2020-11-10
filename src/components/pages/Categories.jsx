@@ -9,6 +9,7 @@ function Categories() {
         <section className="bloc">Business</section>
         <section className="bloc">Santé</section>
         <section className="bloc">Divertissement</section>
+        <section className="bloc">Technologies</section>
       </div>
     </div>
   );
