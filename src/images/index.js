@@ -8,6 +8,7 @@ import logoLinkedin from './logoLinkedin.png';
 import logoTwitter from './logoTwitter.png';
 import logoYoutube from './logoYoutube.png';
 import home from './home.png';
+import category from './category.png';
 
 export {
   background,
@@ -20,4 +21,5 @@ export {
   logoTwitter,
   logoYoutube,
   home,
+  category,
 };

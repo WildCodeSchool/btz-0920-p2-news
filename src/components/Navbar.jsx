@@ -3,10 +3,7 @@ import './Navbar.css';
 
 import { Link } from 'react-router-dom';
 
-import user from './user.png';
-import category from './categorie.png';
-import search from './search.png';
-import home from './home.png';
+import { home, category, user, search } from '../images';
 
 const Navigation = () => {
   return (
