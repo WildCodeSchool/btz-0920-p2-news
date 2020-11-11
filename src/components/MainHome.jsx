@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Axios from 'axios';
 
 import { apiUrl, apiKey } from '../api';
-// import MyCarousel from './MyCarousel';
+import MyCarousel from './MyCarousel';
 import NewsList from './NewsList';
 import Filter from './Filter';
 
@@ -11,7 +11,7 @@ const MainHome = () => {
   const [currentCat, setCurrentCat] = useState([
     { label: 'Général', value: 'general', selected: true },
     { label: 'Sport', value: 'sports', selected: true },
-    { label: 'Business', value: 'business', selected: true },
+    { label: 'Business', value: 'business', selected: false },
     { label: 'Science', value: 'science', selected: false },
     { label: 'Santé', value: 'health', selected: false },
     { label: 'Technologies', value: 'technology', selected: false },
@@ -41,7 +41,7 @@ const MainHome = () => {
   return (
     <div>
       <Filter setCurrentCat={setCurrentCat} currentCat={currentCat} />
-      {/* <MyCarousel articlesArray={articlesArray} /> */}
+      <MyCarousel articlesArray={articlesArray} />
       <NewsList articles={articlesArray} />
     </div>
   );
