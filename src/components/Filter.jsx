@@ -1,5 +1,6 @@
 import { Button } from 'reactstrap';
 import PropTypes from 'prop-types';
+import './Filter.css';
 
 function Filter({ setCurrentCat, currentCat }) {
   const selectCategory = (currentValue) => {
@@ -16,14 +17,15 @@ function Filter({ setCurrentCat, currentCat }) {
   };
 
   return (
-    <div>
-      {currentCat.map((cat) => {
+    <div className="filterDiv">
+      {categories.map((cat) => {
         return (
           <Button
+            className="buttons"
             key={cat.value}
             onClick={() => selectCategory(cat.value)}
             outline={!cat.selected}
-            color="danger"
+            color="warning"
           >
             {cat.label}
           </Button>

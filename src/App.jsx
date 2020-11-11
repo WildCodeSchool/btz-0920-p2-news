@@ -1,14 +1,16 @@
 import './App.css';
 import Header from './components/Header';
-import Navbar from './components/Navbar';
+import Navigation from './components/Navbar';
 import MainHome from './components/MainHome';
+import Footer from './components/Footer';
 
 function App() {
   return (
     <div className="App">
       <Header />
       <MainHome className="App-header" />
-      <Navbar />
+      <Navigation />
+      <Footer />
     </div>
   );
 }

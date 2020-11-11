@@ -68,7 +68,6 @@ const MyCarousel = ({ articlesArray }) => {
       {/* CSS in JS by Raph */}
       <style>
         {`.custom-tag {
-          height: 400px;
           text-shadow: 1px 1px 3px #545454;
         }`}
       </style>
