@@ -18,7 +18,7 @@ function Filter({ setCurrentCat, currentCat }) {
 
   return (
     <div className="filterDiv">
-      {categories.map((cat) => {
+      {currentCat.map((cat) => {
         return (
           <Button
             className="buttons"
