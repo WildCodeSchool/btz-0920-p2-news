@@ -40,8 +40,10 @@ const MainHome = () => {
 
   return (
     <div>
-      <Filter setCurrentCat={setCurrentCat} currentCat={currentCat} />
-      <MyCarousel articlesArray={articlesArray} />
+      <div className="article">
+        <Filter setCurrentCat={setCurrentCat} currentCat={currentCat} />
+        <MyCarousel articlesArray={articlesArray} />
+      </div>
       <NewsList articles={articlesArray} />
     </div>
   );
