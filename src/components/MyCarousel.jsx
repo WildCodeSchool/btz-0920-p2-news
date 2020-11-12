@@ -14,7 +14,17 @@ const MyCarousel = ({ articlesArray }) => {
   const [animating, setAnimating] = useState(false);
 
   useEffect(() => {
-    setArticles([...articlesArray].splice(0, 3));
+    setArticles(
+      [...articlesArray].reduce((acc, curr) => {
+        return [
+          ...acc,
+          {
+            title: curr.news[0].title,
+            urlToImage: curr.news[0].urlToImage,
+          },
+        ];
+      }, [])
+    );
   }, [articlesArray]);
 
   const next = () => {
@@ -48,10 +58,7 @@ const MyCarousel = ({ articlesArray }) => {
           src={article.urlToImage}
           alt={article.title}
         />
-        <CarouselCaption
-          // captionText={article.title}
-          captionHeader={article.title}
-        />
+        <CarouselCaption captionText={article.title} />
       </CarouselItem>
     );
   });
@@ -86,12 +93,23 @@ const MyCarousel = ({ articlesArray }) => {
   );
 };
 
-MyCarousel.defaultProps = {
-  articlesArray: '',
-};
-
 MyCarousel.propTypes = {
-  articlesArray: PropTypes.string,
+  articlesArray: PropTypes.arrayOf(
+    PropTypes.shape({
+      category: PropTypes.string,
+      news: PropTypes.arrayOf(
+        PropTypes.shape({
+          title: PropTypes.string,
+          description: PropTypes.string,
+          url: PropTypes.string,
+          source: PropTypes.shape({
+            id: PropTypes.string,
+            name: PropTypes.string,
+          }),
+        })
+      ),
+    })
+  ).isRequired,
 };
 
 export default MyCarousel;

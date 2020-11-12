@@ -1,49 +1,30 @@
-import { useState } from 'react';
 import { Button } from 'reactstrap';
 import PropTypes from 'prop-types';
 import './Filter.css';
 
 function Filter({ setCurrentCat, currentCat }) {
-  const [categories] = useState([
-    {
-      label: 'Général',
-      value: 'general',
-    },
-    {
-      label: 'Sport',
-      value: 'sports',
-    },
-    {
-      label: 'Business',
-      value: 'business',
-    },
-    {
-      label: 'Science',
-      value: 'science',
-    },
-    {
-      label: 'Santé',
-      value: 'health',
-    },
-    {
-      label: 'Technologies',
-      value: 'technology',
-    },
-    {
-      label: 'Divertissement',
-      value: 'entertainment',
-    },
-  ]);
+  const selectCategory = (currentValue) => {
+    const stateCopy = currentCat.map((cat) => {
+      if (cat.value === currentValue) {
+        return {
+          ...cat,
+          selected: !cat.selected,
+        };
+      }
+      return cat;
+    });
+    setCurrentCat(stateCopy);
+  };
 
   return (
     <div className="filterDiv">
-      {categories.map((cat) => {
+      {currentCat.map((cat) => {
         return (
           <Button
             className="buttons"
             key={cat.value}
-            onClick={() => setCurrentCat(cat.value)}
-            outline={cat.value !== currentCat}
+            onClick={() => selectCategory(cat.value)}
+            outline={!cat.selected}
             color="warning"
           >
             {cat.label}
@@ -56,7 +37,13 @@ function Filter({ setCurrentCat, currentCat }) {
 
 Filter.propTypes = {
   setCurrentCat: PropTypes.func.isRequired,
-  currentCat: PropTypes.string.isRequired,
+  currentCat: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string,
+      value: PropTypes.string,
+      Selected: PropTypes.string,
+    })
+  ).isRequired,
 };
 
 export default Filter;

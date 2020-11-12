@@ -1,53 +1,36 @@
 import PropTypes from 'prop-types';
-import { Container, Row } from 'reactstrap';
-
-import ArticlePreview from './ArticlePreview';
+import CategoryContainer from './Container';
 import './MainHome.css';
 
-// Ce composant crée une liste de News provenant de l'API
-function NewsList({ articlesArray }) {
-  return (
-    <Container>
-      <Row>
-        {articlesArray
-          .filter((article) => article.urlToImage)
-          .map((article, i) => {
-            return (
-              <ArticlePreview
-                index={i}
-                image={article.urlToImage}
-                title={article.title}
-                url={article.url}
-                date={article.publishedAt}
-                source={article.source.name}
-                description={article.description}
-                key={article.title}
-              />
-            );
-          })}
-      </Row>
-    </Container>
-  );
+function NewsList({ articles }) {
+  return articles.map((item) => {
+    return (
+      <CategoryContainer
+        key={item.category}
+        category={item.category}
+        news={item.news}
+      />
+    );
+  });
 }
 
-NewsList.defaultProps = {
-  articlesArray: [],
-};
-
-// TODO: Finish those Prop Types
 NewsList.propTypes = {
-  articlesArray: PropTypes.arrayOf(
+  articles: PropTypes.arrayOf(
     PropTypes.shape({
-      author: PropTypes.oneOf([PropTypes.any, PropTypes.string]),
-      title: PropTypes.string,
-      description: PropTypes.string,
-      url: PropTypes.string,
-      source: PropTypes.shape({
-        id: PropTypes.oneOf([PropTypes.any]),
-        name: PropTypes.string,
-      }),
+      category: PropTypes.string,
+      news: PropTypes.arrayOf(
+        PropTypes.shape({
+          title: PropTypes.string,
+          description: PropTypes.string,
+          url: PropTypes.string,
+          source: PropTypes.shape({
+            id: PropTypes.string,
+            name: PropTypes.string,
+          }),
+        })
+      ),
     })
-  ),
+  ).isRequired,
 };
 
 export default NewsList;
