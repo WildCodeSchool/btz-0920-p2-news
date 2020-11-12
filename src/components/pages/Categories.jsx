@@ -1,17 +1,57 @@
-import './Categories.css';
+import { useState } from 'react';
+import { Card, CardText, NavItem } from 'reactstrap';
 
-function Categories() {
+import { Link } from 'react-router-dom';
+
+const Categories = () => {
+  const [navCat] = useState([
+    {
+      label: 'Business',
+      route: '/business',
+      text: 'Business',
+    },
+    {
+      label: 'Santé',
+      route: '/santé',
+      text: 'Santé',
+    },
+    {
+      label: 'Technologie',
+      route: '/technologie',
+      text: 'Technologie',
+    },
+    {
+      label: 'Sport',
+      route: '/sport',
+      text: 'Sport',
+    },
+    {
+      label: 'Divertissement',
+      route: '/divertissement',
+      text: 'Divertissement',
+    },
+    {
+      label: 'Science',
+      route: '/science',
+      text: 'Science',
+    },
+  ]);
+
   return (
-    <div>
-      <div className="section">
-        <section className="bloc">Général</section>
-        <section className="bloc">Sport</section>
-        <section className="bloc">Business</section>
-        <section className="bloc">Santé</section>
-        <section className="bloc">Divertissement</section>
-      </div>
+    <div className="category">
+      {navCat.map((cat) => {
+        return (
+          <Card className="cat-card">
+            <NavItem tag="h5" key={cat.route}>
+              <CardText tag={Link} to={cat.route}>
+                {cat.text}
+              </CardText>
+            </NavItem>
+          </Card>
+        );
+      })}
     </div>
   );
-}
+};
 
 export default Categories;
