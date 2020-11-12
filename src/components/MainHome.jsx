@@ -23,7 +23,7 @@ const MainHome = () => {
     const selectedCategory = currentCat.filter((cat) => cat.selected);
     // Génère les requêtes API pour chaque catégorie selectionnée
     const promiseList = selectedCategory.map((cat) =>
-      Axios.get(`${apiUrl}&pageSize=5&category=${cat.value}&apiKey=${apiKey}`)
+      Axios.get(`${apiUrl}&pageSize=10&category=${cat.value}&apiKey=${apiKey}`)
     );
     // Génère un tableau d'objet contenant label et news de chaque catégorie
 
