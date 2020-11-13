@@ -9,7 +9,7 @@ function CategoryContainer({ category, news }) {
         style={{
           color: 'white',
           textAlign: 'center',
-          backgroundColor: 'black',
+          backgroundColor: '#F7D578',
           padding: '20px',
         }}
       >
