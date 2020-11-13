@@ -5,7 +5,16 @@ import ArticlePreview from './ArticlePreview';
 function CategoryContainer({ category, news }) {
   return (
     <Container key={category}>
-      <h2>{category}</h2>
+      <h2
+        style={{
+          color: 'white',
+          textAlign: 'center',
+          backgroundColor: '#F7D578',
+          padding: '20px',
+        }}
+      >
+        {category}
+      </h2>
       <Row>
         {news
           .filter((article) => article.urlToImage)

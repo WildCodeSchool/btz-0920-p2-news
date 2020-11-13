@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import CategoryContainer from './Container';
-import './MainHome.css';
 
 function NewsList({ articles }) {
   return articles.map((item) => {

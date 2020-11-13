@@ -13,6 +13,9 @@
 .row {
   margin-top: 40px;
   margin-bottom: 40px;
+  width: 70%;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .cardMain {
@@ -63,4 +66,16 @@
   color: rgb(255, 255, 255);
   text-decoration: none;
   text-shadow: 1px 1px 1px #545454;
+}
+
+@media screen and (max-width: 767px) {
+  .title {
+    font-size: 60%;
+  }
+}
+
+@media screen (min-width: 767px) and (max-width: 1000px) {
+  .title {
+    font-size: 200%;
+  }
 }
