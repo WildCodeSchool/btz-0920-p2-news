@@ -3,6 +3,8 @@ import { Card, CardText, NavItem } from 'reactstrap';
 
 import { Link } from 'react-router-dom';
 
+import './Categories.css';
+
 const Categories = () => {
   const [navCat] = useState([
     {
