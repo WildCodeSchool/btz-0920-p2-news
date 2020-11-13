@@ -1,0 +1,8 @@
+.filterDiv {
+  display: flex;
+  justify-content: space-around;
+  background-color: black;
+  padding: 20px 0 20px 0;
+  flex-wrap: wrap;
+  width: 100%;
+}

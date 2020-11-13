@@ -1,35 +1,36 @@
 import PropTypes from 'prop-types';
-import Card from './Card';
+import CategoryContainer from './Container';
 import './MainHome.css';
 
-// Ce composant crée une liste de News provenant de l'API
-function NewsList({ articlesArray }) {
-  return (
-    <div className="newslist">
-      {articlesArray.map((article) => {
-        return (
-          <Card
-            image={article.urlToImage}
-            title={article.title}
-            url={article.url}
-            date={article.publishedAt}
-            source={article.source.name}
-            description={article.description}
-            key={article.title}
-          />
-        );
-      })}
-    </div>
-  );
+function NewsList({ articles }) {
+  return articles.map((item) => {
+    return (
+      <CategoryContainer
+        key={item.category}
+        category={item.category}
+        news={item.news}
+      />
+    );
+  });
 }
 
-NewsList.defaultProps = {
-  articlesArray: [],
-};
-
 NewsList.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
-  articlesArray: PropTypes.array,
+  articles: PropTypes.arrayOf(
+    PropTypes.shape({
+      category: PropTypes.string,
+      news: PropTypes.arrayOf(
+        PropTypes.shape({
+          title: PropTypes.string,
+          description: PropTypes.string,
+          url: PropTypes.string,
+          source: PropTypes.shape({
+            id: PropTypes.string,
+            name: PropTypes.string,
+          }),
+        })
+      ),
+    })
+  ).isRequired,
 };
 
 export default NewsList;

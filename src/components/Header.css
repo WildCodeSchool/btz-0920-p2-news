@@ -1,16 +1,19 @@
-.logo {
+.mainLogo {
   width: 50%;
-  margin: 3% 0% 3% 0%;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-bottom: 40px;
 }
 
 .background {
-  background-image: url('./background.png');
+  background-image: url('../images/background.png');
   background-size: cover;
 }
 
-.trends {
+.home {
   display: flex;
-  width: 55px;
+  width: 60px;
   padding-left: 10px;
   padding-top: 10px;
 }
@@ -34,11 +37,9 @@
 }
 
 @media screen and (max-width: 768px) {
-  .trends {
-    display: none;
-  }
-
-  .menu {
+  .trends,
+  .menu,
+  .home {
     display: none;
   }
 }

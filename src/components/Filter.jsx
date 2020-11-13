@@ -1,51 +1,31 @@
-import { useState } from 'react';
 import { Button } from 'reactstrap';
 import PropTypes from 'prop-types';
+import './Filter.css';
 
 function Filter({ setCurrentCat, currentCat }) {
-  const [categories] = useState([
-    {
-      label: 'Général',
-      value: 'general',
-    },
-    {
-      label: 'Sport',
-      value: 'sports',
-    },
-    {
-      label: 'Business',
-      value: 'business',
-    },
-    {
-      label: 'Science',
-      value: 'science',
-    },
-    {
-      label: 'Santé',
-      value: 'health',
-    },
-    {
-      label: 'Technologies',
-      value: 'technology',
-    },
-    {
-      label: 'Divertissement',
-      value: 'entertainment',
-    },
-  ]);
-
-  const handleCat = (category) => {
-    setCurrentCat(category);
+  const selectCategory = (currentValue) => {
+    const stateCopy = currentCat.map((cat) => {
+      if (cat.value === currentValue) {
+        return {
+          ...cat,
+          selected: !cat.selected,
+        };
+      }
+      return cat;
+    });
+    setCurrentCat(stateCopy);
   };
+
   return (
-    <div>
-      {categories.map((cat) => {
+    <div className="filterDiv">
+      {currentCat.map((cat) => {
         return (
           <Button
+            className="buttons"
             key={cat.value}
-            onClick={() => handleCat(cat.value)}
-            outline={cat.value !== currentCat}
-            color="danger"
+            onClick={() => selectCategory(cat.value)}
+            outline={!cat.selected}
+            color="warning"
           >
             {cat.label}
           </Button>
@@ -55,13 +35,15 @@ function Filter({ setCurrentCat, currentCat }) {
   );
 }
 
-Filter.defaultProps = {
-  setCurrentCat: '',
-};
-
 Filter.propTypes = {
-  setCurrentCat: PropTypes.func,
-  currentCat: PropTypes.string.isRequired,
+  setCurrentCat: PropTypes.func.isRequired,
+  currentCat: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string,
+      value: PropTypes.string,
+      Selected: PropTypes.string,
+    })
+  ).isRequired,
 };
 
 export default Filter;
