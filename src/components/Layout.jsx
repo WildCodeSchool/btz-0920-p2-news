@@ -12,7 +12,11 @@ import Header from './Header';
 
 const Layout = ({ children }) => {
   return (
-    <div>
+    <div
+      style={{
+        backgroundColor: '#f5cb5c',
+      }}
+    >
       <Header />
       <Container>{children}</Container>
       <Footer />
