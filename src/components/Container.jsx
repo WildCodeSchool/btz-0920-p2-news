@@ -20,6 +20,7 @@ function CategoryContainer({ category, news }) {
                 source={article.source.name}
                 description={article.description}
                 key={article.title}
+                category={category}
               />
             );
           })}
