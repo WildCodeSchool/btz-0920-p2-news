@@ -25,7 +25,6 @@ const Navigation = () => {
     },
     {
       label: 'Search',
-      route: '/categories',
       image: search,
     },
   ]);
