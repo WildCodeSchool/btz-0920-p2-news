@@ -1,12 +1,5 @@
 import PropTypes from 'prop-types';
-import {
-  Button,
-  Card,
-  CardImg,
-  CardImgOverlay,
-  CardTitle,
-  Col,
-} from 'reactstrap';
+import { Card, CardImg, CardImgOverlay, CardTitle, Col } from 'reactstrap';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import './ArticlePreview.css';
@@ -24,19 +17,16 @@ function ArticlePreview({ image, title, url, index, categoryParam }) {
         <CardImg src={image} alt={title} />
         <CardImgOverlay>
           <CardTitle tag="h4" className="title">
-            <a tag={Link} to={articleLink} className="linkColor">
-              {title}
-            </a>
-            <Button
+            <Link
+              to={articleLink}
               onClick={() => {
                 setArticleCategory(categoryParam);
                 setArticleUrl(url);
               }}
-              tag={Link}
-              to={articleLink}
+              className="linkColor"
             >
-              Button
-            </Button>
+              {title}
+            </Link>
           </CardTitle>
         </CardImgOverlay>
       </Card>
