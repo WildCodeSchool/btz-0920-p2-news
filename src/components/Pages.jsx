@@ -1,5 +1,12 @@
+import { useParams } from 'react-router-dom';
+
 function Pages() {
-  return <h1>Pages</h1>;
+  const { id } = useParams();
+  return (
+    <div>
+      <h1>{id}</h1>
+    </div>
+  );
 }
 
 export default Pages;

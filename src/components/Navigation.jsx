@@ -15,7 +15,7 @@ const Navigation = () => {
     },
     {
       label: 'My Profile',
-      route: '/my-profile',
+      route: '/myprofile',
       image: user,
     },
     {
