@@ -4,5 +4,6 @@
   background-color: black;
   padding: 20px 0 20px 0;
   flex-wrap: wrap;
+  row-gap: 10px;
   width: 100%;
 }
