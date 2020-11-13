@@ -42,7 +42,7 @@ const Categories = () => {
       {navCat.map((cat) => {
         return (
           <Card className="cat-card">
-            <NavItem tag="h5" key={cat.route} id={cat.route}>
+            <NavItem tag="h5" key={cat.route}>
               <CardText tag={Link} to={cat.route}>
                 {cat.text}
               </CardText>
