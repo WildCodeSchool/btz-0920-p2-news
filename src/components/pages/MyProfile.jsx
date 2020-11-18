@@ -1,4 +1,5 @@
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import Search from '../Search';
 
 function MyProfile() {
   return (
@@ -40,6 +41,7 @@ function MyProfile() {
           </FormGroup>
           <Button>Me connecter</Button>
         </Form>
+        <Search />
       </div>
     </div>
   );
