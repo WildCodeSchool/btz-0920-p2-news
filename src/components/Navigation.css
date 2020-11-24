@@ -1,0 +1,48 @@
+.icon-navbar {
+  width: 25px;
+  height: 100%;
+<<<<<<< Updated upstream
+  margin-right: 15px;
+  margin-left: 15px;
+=======
+  margin-right: 10px;
+  margin-left: 10px;
+>>>>>>> Stashed changes
+}
+
+.Navbar {
+  background-color: #f0eeee;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.btn {
+  background-position: center;
+  transition: background 0.8s;
+}
+.btn:hover {
+  background: #f0eeee
+    radial-gradient(circle, transparent 1%, rgb(146, 145, 145) 1%) center/15000%;
+}
+.btn:active {
+  background-color: grey;
+  transition: background 0s;
+}
+
+/* Button style */
+button {
+  border: none;
+  border-radius: 150px;
+  padding: 12px 18px;
+  box-shadow: 0 0 4px #999;
+}
+
+@media screen and (min-width: 768px) {
+  .Navbar {
+    display: none;
+  }
+}

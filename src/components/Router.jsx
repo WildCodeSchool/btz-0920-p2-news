@@ -12,9 +12,9 @@ const Router = () => {
       <Layout>
         <Switch>
           <Route exact path="/" component={MainHome} />
-          <Route path="/my-profile" component={MyProfile} />
-          <Route path="/categories" component={Categories} />
+          <Route path="/myprofile" component={MyProfile} />
           <Route path="/categories/:id" component={Pages} />
+          <Route path="/categories" component={Categories} />
         </Switch>
       </Layout>
     </BrowserRouter>
