@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Card, CardText, NavItem } from 'reactstrap';
-
 import { Link } from 'react-router-dom';
 
 import './Categories.css';
@@ -9,33 +8,33 @@ const Categories = () => {
   const [navCat] = useState([
     {
       label: 'Business',
-      route: '/business',
       text: 'Business',
+      id: 'business',
     },
     {
       label: 'Santé',
-      route: '/santé',
       text: 'Santé',
+      id: 'santé',
     },
     {
       label: 'Technologie',
-      route: '/technologie',
       text: 'Technologie',
+      id: 'technologies',
     },
     {
       label: 'Sport',
-      route: '/sport',
       text: 'Sport',
+      id: 'sport',
     },
     {
       label: 'Divertissement',
-      route: '/divertissement',
       text: 'Divertissement',
+      id: 'divertissement',
     },
     {
       label: 'Science',
-      route: '/science',
       text: 'Science',
+      id: 'science',
     },
   ]);
 
@@ -45,7 +44,7 @@ const Categories = () => {
         return (
           <Card className="cat-card">
             <NavItem tag="h5" key={cat.route}>
-              <CardText tag={Link} to={cat.route}>
+              <CardText className="text" tag={Link} to={`categories/${cat.id}`}>
                 {cat.text}
               </CardText>
             </NavItem>

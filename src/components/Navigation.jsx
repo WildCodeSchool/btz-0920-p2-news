@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Nav, NavItem, NavLink } from 'reactstrap';
-import './Navbar.css';
+import './Navigation.css';
 
 import { Link } from 'react-router-dom';
 
@@ -15,7 +15,7 @@ const Navigation = () => {
     },
     {
       label: 'My Profile',
-      route: '/my-profile',
+      route: '/myprofile',
       image: user,
     },
     {
@@ -25,7 +25,6 @@ const Navigation = () => {
     },
     {
       label: 'Search',
-      route: '/categories',
       image: search,
     },
   ]);
@@ -35,7 +34,7 @@ const Navigation = () => {
       <Nav className="navbar">
         {navItems.map((item) => {
           return (
-            <NavItem key={item.route}>
+            <NavItem className="nav-item" key={item.route}>
               <NavLink tag={Link} to={item.route} className="btn">
                 <img
                   className="icon-navbar"
