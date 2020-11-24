@@ -1,12 +1,13 @@
-.bloc {
-  border: solid;
-  flex-wrap: wrap;
-  margin: 2px;
-  padding: 40px;
-  text-align: center;
-  background: white;
-}
-
 .container {
   padding: 0px;
+}
+
+.cat-card {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+.text :nth-child(2n) {
+  display: flex;
+  justify-content: flex-end;
 }

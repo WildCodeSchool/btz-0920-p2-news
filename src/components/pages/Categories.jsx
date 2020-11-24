@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Card, CardText, NavItem } from 'reactstrap';
+import './Categories.css';
 
 import { Link } from 'react-router-dom';
 
@@ -43,7 +44,7 @@ const Categories = () => {
         return (
           <Card className="cat-card">
             <NavItem tag="h5" key={cat.route}>
-              <CardText tag={Link} to={`categories/${cat.id}`}>
+              <CardText className="text" tag={Link} to={`categories/${cat.id}`}>
                 {cat.text}
               </CardText>
             </NavItem>
