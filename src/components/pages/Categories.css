@@ -11,3 +11,13 @@
   display: flex;
   justify-content: flex-end;
 }
+
+.cat-card {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+.text :nth-child(2n) {
+  display: flex;
+  justify-content: flex-end;
+}
