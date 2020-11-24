@@ -1,7 +1,5 @@
 import { useState } from 'react';
 import { Card, CardText, NavItem } from 'reactstrap';
-import './Categories.css';
-
 import { Link } from 'react-router-dom';
 
 import './Categories.css';
