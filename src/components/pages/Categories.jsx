@@ -43,7 +43,7 @@ const Categories = () => {
       {navCat.map((cat) => {
         return (
           <Card className="cat-card">
-            <NavItem tag="h5" key={cat.route}>
+            <NavItem tag="h5" key={cat.label}>
               <CardText className="text" tag={Link} to={`categories/${cat.id}`}>
                 {cat.text}
               </CardText>

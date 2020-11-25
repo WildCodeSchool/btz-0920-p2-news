@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { apiKey, apiUrl } from '../api';
 import NewsList from './NewsList';
-// import NewsList from './NewsList';
 
 const Pages = () => {
   const { id } = useParams();
