@@ -1,33 +1,35 @@
 import PropTypes from 'prop-types';
 import { Card, CardImg, CardImgOverlay, CardTitle, Col } from 'reactstrap';
+import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import './ArticlePreview.css';
+import categorieContext from '../contexts/categorieContext';
 
 // Cette fonction crée une Card pour un article
-function ArticlePreview({ image, title, url, index }) {
+function ArticlePreview({ image, title, url, index, categoryParam }) {
+  const { setArticleCategory } = useContext(categorieContext);
+  const { setArticleUrl } = useContext(categorieContext);
+  const articleLink = '/article';
+
   return (
     <Col lg={index % 3 === 0 ? 12 : 6}>
       <Card className="cardMain" inverse>
         <CardImg src={image} alt={title} />
         <CardImgOverlay>
           <CardTitle tag="h4" className="title">
-            <a className="linkColor" href={url}>
+            <Link
+              to={articleLink}
+              onClick={() => {
+                setArticleCategory(categoryParam);
+                setArticleUrl(url);
+              }}
+              className="linkColor"
+            >
               {title}
-            </a>
+            </Link>
           </CardTitle>
         </CardImgOverlay>
       </Card>
-      {/* <div className="card">
-        <div className="header">
-          <img className="image" src={image} alt={title} />
-          <a className="title" href={url}>
-            {title}
-          </a>
-          <span className="detail">
-            De : {source} &nbsp;&nbsp;&nbsp; Publié le :
-            {articleDate.toLocaleDateString()}
-          </span>
-        </div>
-      </div> */}
     </Col>
   );
 }
@@ -45,6 +47,7 @@ ArticlePreview.propTypes = {
   url: PropTypes.string,
   title: PropTypes.string,
   image: PropTypes.string,
+  categoryParam: PropTypes.string.isRequired,
   index: PropTypes.number.isRequired,
 };
 

@@ -1,5 +1,5 @@
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { useState } from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Pages from './Pages';
 import MyProfile from './pages/MyProfile';
@@ -7,6 +7,7 @@ import Layout from './Layout';
 import Categories from './pages/Categories';
 import MainHome from './MainHome';
 import categorieContext from '../contexts/categorieContext';
+import Article from './pages/Article';
 
 function Router() {
   const [currentCat, setCurrentCat] = useState([
@@ -18,6 +19,8 @@ function Router() {
     { label: 'Technologies', value: 'technology', selected: false },
     { label: 'Divertissement', value: 'entertainment', selected: false },
   ]);
+  const [articleCategory, setArticleCategory] = useState('');
+  const [articleUrl, setArticleUrl] = useState('');
 
   return (
     <BrowserRouter>
@@ -25,6 +28,10 @@ function Router() {
         value={{
           currentCat,
           setCurrentCat,
+          articleCategory,
+          setArticleCategory,
+          articleUrl,
+          setArticleUrl,
         }}
       >
         <Layout>
@@ -33,6 +40,7 @@ function Router() {
             <Route path="/myprofile" component={MyProfile} />
             <Route path="/categories/:id" component={Pages} />
             <Route path="/categories" component={Categories} />
+            <Route path="/article" component={Article} />
           </Switch>
         </Layout>
       </categorieContext.Provider>

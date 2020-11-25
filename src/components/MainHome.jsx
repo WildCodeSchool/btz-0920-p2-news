@@ -24,6 +24,7 @@ const MainHome = () => {
       const nextState = responses.map((cat, i) => {
         return {
           category: selectedCategory[i].label,
+          categoryParam: selectedCategory[i].value,
           news: cat.data.articles,
         };
       });
