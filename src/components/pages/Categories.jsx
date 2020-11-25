@@ -14,22 +14,22 @@ const Categories = () => {
     {
       label: 'Santé',
       text: 'Santé',
-      id: 'santé',
+      id: 'health',
     },
     {
       label: 'Technologie',
       text: 'Technologie',
-      id: 'technologies',
+      id: 'technology',
     },
     {
       label: 'Sport',
       text: 'Sport',
-      id: 'sport',
+      id: 'sports',
     },
     {
       label: 'Divertissement',
       text: 'Divertissement',
-      id: 'divertissement',
+      id: 'entertainment',
     },
     {
       label: 'Science',
