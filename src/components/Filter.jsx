@@ -5,6 +5,13 @@ import './Filter.css';
 function Filter({ setCurrentCat, currentCat }) {
   const selectCategory = (currentValue) => {
     const stateCopy = currentCat.map((cat) => {
+      if (cat.value === 'general') {
+        return {
+          ...cat,
+          selected: false,
+        };
+        // eslint-disable-next-line no-else-return
+      }
       if (cat.value === currentValue) {
         return {
           ...cat,
@@ -18,7 +25,7 @@ function Filter({ setCurrentCat, currentCat }) {
 
   return (
     <div className="filterDiv">
-      {currentCat.map((cat) => {
+      {currentCat.slice(1).map((cat) => {
         return (
           <Button
             className="buttons"
