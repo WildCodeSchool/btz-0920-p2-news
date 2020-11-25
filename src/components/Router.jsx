@@ -7,6 +7,7 @@ import Layout from './Layout';
 import Categories from './pages/Categories';
 import MainHome from './MainHome';
 import categorieContext from '../contexts/categorieContext';
+import SearchPage from './SearchPage';
 
 function Router() {
   const [currentCat, setCurrentCat] = useState([
@@ -33,6 +34,7 @@ function Router() {
             <Route path="/myprofile" component={MyProfile} />
             <Route path="/categories/:id" component={Pages} />
             <Route path="/categories" component={Categories} />
+            <Route path="/search" component={SearchPage} />
           </Switch>
         </Layout>
       </categorieContext.Provider>
