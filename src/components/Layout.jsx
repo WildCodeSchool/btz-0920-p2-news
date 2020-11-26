@@ -1,14 +1,10 @@
 import PropTypes from 'prop-types';
 import { Container } from 'reactstrap';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Header from './Header';
 import Navigation from './Navigation';
 import Footer from './Footer';
-
-import 'bootstrap/dist/css/bootstrap.min.css';
-// import NewsList from './NewsList';
-import Header from './Header';
-
-// import MyCarousel from './MyCarousel';
 
 const Layout = ({ children }) => {
   return (
@@ -26,4 +22,6 @@ const Layout = ({ children }) => {
 };
 export default Layout;
 
-Layout.propTypes = { children: PropTypes.isRequired };
+Layout.propTypes = {
+  children: PropTypes.oneOfType([PropTypes.object, PropTypes.func]).isRequired,
+};

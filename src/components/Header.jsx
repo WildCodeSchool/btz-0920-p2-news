@@ -1,9 +1,9 @@
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import categorieContext from '../contexts/categorieContext';
-import { wildnewsLogo, home, user, search } from '../images';
 
 import './Header.css';
+import { wildnewsLogo, home, user, search } from '../images';
+import categorieContext from '../contexts/categorieContext';
 
 function Header() {
   const { currentCat, setCurrentCat } = useContext(categorieContext);
@@ -15,14 +15,13 @@ function Header() {
           ...cat,
           selected: true,
         };
-        // eslint-disable-next-line no-else-return
-      } else {
+      }
+      if (cat.value !== 'general') {
         return {
           ...cat,
           selected: false,
         };
       }
-      // eslint-disable-next-line no-unreachable
       return cat;
     });
     setCurrentCat(stateCopy);
@@ -31,7 +30,7 @@ function Header() {
   return (
     <header className="background">
       <nav className="navbar">
-        <Link to="/" onClick={() => selectCategory()}>
+        <Link to="/" onClick={selectCategory}>
           <img className="home" src={home} alt="home" />
         </Link>
         <div className="menu">

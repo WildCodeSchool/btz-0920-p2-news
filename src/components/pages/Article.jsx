@@ -31,7 +31,15 @@ const Article = () => {
     return (
       <>
         <Card>
-          <CardImg top width="100%" src={item.urlToImage} alt={item.title} />
+          <CardImg
+            top
+            width="100%"
+            src={item.urlToImage}
+            alt={item.title}
+            onError={(e) => {
+              e.target.src = 'https://i.imgur.com/lN0xhY3.jpg';
+            }}
+          />
           <CardBody>
             <Button tag={Link} to="/" color="link">
               retourner aux articles
