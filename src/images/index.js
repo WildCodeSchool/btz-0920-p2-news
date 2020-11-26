@@ -9,6 +9,7 @@ import logoTwitter from './logoTwitter.png';
 import logoYoutube from './logoYoutube.png';
 import home from './home.png';
 import category from './category.png';
+import defaultImage from './defaultImage.jpg';
 
 export {
   background,
@@ -22,4 +23,5 @@ export {
   logoYoutube,
   home,
   category,
+  defaultImage,
 };
