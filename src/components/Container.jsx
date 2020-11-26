@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { Container, Row } from 'reactstrap';
 import ArticlePreview from './ArticlePreview';
 
-function CategoryContainer({ category, news }) {
+function CategoryContainer({ category, categoryParam, news }) {
   return (
     <Container key={category}>
       <h2
@@ -30,6 +30,7 @@ function CategoryContainer({ category, news }) {
                 source={article.source.name}
                 description={article.description}
                 key={article.title}
+                categoryParam={categoryParam}
               />
             );
           })}
@@ -40,6 +41,7 @@ function CategoryContainer({ category, news }) {
 
 CategoryContainer.propTypes = {
   category: PropTypes.string.isRequired,
+  categoryParam: PropTypes.string.isRequired,
   news: PropTypes.arrayOf(
     PropTypes.shape({
       title: PropTypes.string,
