@@ -9,7 +9,14 @@ import logoTwitter from './logoTwitter.png';
 import logoYoutube from './logoYoutube.png';
 import home from './home.png';
 import category from './category.png';
+import sport from './sports.jpg';
+import sante from './sante.jpg';
+import business from './business.jpg';
+import science from './science.jpg';
+import divertissement from './divertissement.jpg';
+import technology from './technology.jpg';
 import defaultImage from './defaultImage.jpg';
+
 
 export {
   background,
@@ -23,5 +30,11 @@ export {
   logoYoutube,
   home,
   category,
+  sport,
+  sante,
+  business,
+  science,
+  divertissement,
+  technology,
   defaultImage,
 };
