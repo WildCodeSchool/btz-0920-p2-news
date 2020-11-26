@@ -17,7 +17,6 @@ import divertissement from './divertissement.jpg';
 import technology from './technology.jpg';
 import defaultImage from './defaultImage.jpg';
 
-
 export {
   background,
   search,
