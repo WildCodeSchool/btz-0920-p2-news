@@ -18,7 +18,7 @@ function ArticlePreview({ image, title, url, index, categoryParam }) {
           src={image}
           alt={title}
           onError={(e) => {
-            e.target.src = 'https://i.imgur.com/G9czG28.png';
+            e.target.src = 'https://i.imgur.com/lN0xhY3.jpg';
           }}
         />
         <CardImgOverlay>

@@ -56,6 +56,9 @@ const MyCarousel = ({ articlesArray }) => {
           style={{ width: '100%' }}
           src={article.urlToImage}
           alt={article.title}
+          onError={(e) => {
+            e.target.src = 'https://i.imgur.com/lN0xhY3.jpg';
+          }}
         />
         <CarouselCaption captionText={article.title} />
       </CarouselItem>
