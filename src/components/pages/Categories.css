@@ -8,7 +8,8 @@
   padding-bottom: 90px;
 }
 
-.cat-card {
-  padding-top: 90px;
-  padding-bottom: 90px;
+.text {
+  color: black;
+  display: flex;
+  justify-content: center;
 }
