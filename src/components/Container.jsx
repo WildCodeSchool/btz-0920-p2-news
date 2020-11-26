@@ -6,6 +6,7 @@ function CategoryContainer({ category, categoryParam, news }) {
   return (
     <Container key={category}>
       <h2
+        className="h2CatContainer"
         style={{
           color: 'white',
           textAlign: 'center',
