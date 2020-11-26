@@ -74,7 +74,7 @@
   }
 }
 
-@media screen (min-width: 767px) and (max-width: 1000px) {
+@media screen and (min-width: 767px) and (max-width: 1000px) {
   .title {
     font-size: 200%;
   }

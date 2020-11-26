@@ -35,7 +35,7 @@ function Header() {
           <img className="home" src={home} alt="home" />
         </Link>
         <div className="menu">
-          <Link to="/my-profile">
+          <Link to="/myprofile">
             <img className="user" src={user} alt="user" />
           </Link>
           <Link to="/search">

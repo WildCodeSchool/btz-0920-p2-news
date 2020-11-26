@@ -14,22 +14,22 @@ const Categories = () => {
     {
       label: 'Santé',
       text: 'Santé',
-      id: 'santé',
+      id: 'health',
     },
     {
       label: 'Technologie',
       text: 'Technologie',
-      id: 'technologies',
+      id: 'technology',
     },
     {
       label: 'Sport',
       text: 'Sport',
-      id: 'sport',
+      id: 'sports',
     },
     {
       label: 'Divertissement',
       text: 'Divertissement',
-      id: 'divertissement',
+      id: 'entertainment',
     },
     {
       label: 'Science',
@@ -43,7 +43,8 @@ const Categories = () => {
       {navCat.map((cat) => {
         return (
           <Card className="cat-card">
-            <NavItem tag="h5" key={cat.route}>
+            <NavItem tag="h5" key={cat.label}>
+              {' '}
               <CardText className="text" tag={Link} to={`categories/${cat.id}`}>
                 {cat.text}
               </CardText>
