@@ -8,7 +8,6 @@ import {
   CardImg,
   Button,
 } from 'reactstrap';
-
 import Axios from 'axios';
 import { apiUrl, apiKey } from '../../api';
 import categorieContext from '../../contexts/categorieContext';

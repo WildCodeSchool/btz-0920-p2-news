@@ -53,7 +53,6 @@ const MyCarousel = ({ articlesArray }) => {
         key={article.title}
       >
         <img
-          // Add style as CSS in JS by Raph
           style={{ width: '100%' }}
           src={article.urlToImage}
           alt={article.title}
@@ -65,7 +64,6 @@ const MyCarousel = ({ articlesArray }) => {
 
   return (
     <div>
-      {/* CSS in JS by Raph */}
       <style>
         {`.custom-tag {
           text-shadow: 1px 1px 3px #545454;
