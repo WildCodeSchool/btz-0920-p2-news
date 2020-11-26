@@ -15,6 +15,8 @@ import business from './business.jpg';
 import science from './science.jpg';
 import divertissement from './divertissement.jpg';
 import technology from './technology.jpg';
+import defaultImage from './defaultImage.jpg';
+
 
 export {
   background,
@@ -34,4 +36,5 @@ export {
   science,
   divertissement,
   technology,
+  defaultImage,
 };
