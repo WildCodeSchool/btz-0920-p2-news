@@ -10,7 +10,6 @@ function Filter({ setCurrentCat, currentCat }) {
           ...cat,
           selected: false,
         };
-        // eslint-disable-next-line no-else-return
       }
       if (cat.value === currentValue) {
         return {

@@ -14,7 +14,13 @@ function ArticlePreview({ image, title, url, index, categoryParam }) {
   return (
     <Col lg={index % 3 === 0 ? 12 : 6}>
       <Card className="cardMain" inverse>
-        <CardImg src={image} alt={title} />
+        <CardImg
+          src={image}
+          alt={title}
+          onError={(e) => {
+            e.target.src = 'https://i.imgur.com/lN0xhY3.jpg';
+          }}
+        />
         <CardImgOverlay>
           <CardTitle tag="h4" className="title">
             <Link
