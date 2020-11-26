@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import {
   Carousel,
@@ -7,11 +7,16 @@ import {
   CarouselIndicators,
   CarouselCaption,
 } from 'reactstrap';
+import { Link } from 'react-router-dom';
+import categorieContext from '../contexts/categorieContext';
 
 const MyCarousel = ({ articlesArray }) => {
   const [articles, setArticles] = useState([]);
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
+  const { setArticleCategory } = useContext(categorieContext);
+  const { setArticleUrl } = useContext(categorieContext);
+  const articleLink = '/article';
 
   useEffect(() => {
     setArticles(
@@ -21,6 +26,8 @@ const MyCarousel = ({ articlesArray }) => {
           {
             title: curr.news[0].title,
             urlToImage: curr.news[0].urlToImage,
+            categoryParam: curr.categoryParam,
+            url: curr.news[0].url,
           },
         ];
       }, [])
@@ -52,14 +59,23 @@ const MyCarousel = ({ articlesArray }) => {
         onExited={() => setAnimating(false)}
         key={article.title}
       >
-        <img
-          style={{ width: '100%' }}
-          src={article.urlToImage}
-          alt={article.title}
-          onError={(e) => {
-            e.target.src = 'https://i.imgur.com/lN0xhY3.jpg';
+        <Link
+          tag={Link}
+          to={articleLink}
+          onClick={() => {
+            setArticleCategory(article.categoryParam);
+            setArticleUrl(article.url);
           }}
-        />
+        >
+          <img
+            style={{ width: '100%' }}
+            src={article.urlToImage}
+            alt={article.title}
+            onError={(e) => {
+              e.target.src = 'https://i.imgur.com/lN0xhY3.jpg';
+            }}
+          />
+        </Link>
         <CarouselCaption captionText={article.title} />
       </CarouselItem>
     );
