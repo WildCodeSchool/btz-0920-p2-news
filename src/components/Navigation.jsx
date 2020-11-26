@@ -25,6 +25,7 @@ const Navigation = () => {
     },
     {
       label: 'Search',
+      route: '/search',
       image: search,
     },
   ]);
