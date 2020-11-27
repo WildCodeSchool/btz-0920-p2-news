@@ -2,20 +2,25 @@ import PropTypes from 'prop-types';
 import { Container, Row } from 'reactstrap';
 import ArticlePreview from './ArticlePreview';
 
-function CategoryContainer({ category, news }) {
+function CategoryContainer({ category, categoryParam, news }) {
   return (
-    <Container key={category}>
+    <Container
+      style={{
+        paddingBottom: '80px',
+      }}
+      key={category}
+    >
       <h2
+        className="h2CatContainer"
         style={{
+          background: 'black',
           color: 'white',
           textAlign: 'center',
-          backgroundColor: '#F7D578',
-          padding: '20px',
         }}
       >
         {category}
       </h2>
-      <Row>
+      <Row style={{ marginRight: '10%', marginLeft: '10%' }}>
         {news
           .filter((article) => article.urlToImage)
           .map((article, i) => {
@@ -29,6 +34,7 @@ function CategoryContainer({ category, news }) {
                 source={article.source.name}
                 description={article.description}
                 key={article.title}
+                categoryParam={categoryParam}
               />
             );
           })}
@@ -39,6 +45,7 @@ function CategoryContainer({ category, news }) {
 
 CategoryContainer.propTypes = {
   category: PropTypes.string.isRequired,
+  categoryParam: PropTypes.string.isRequired,
   news: PropTypes.arrayOf(
     PropTypes.shape({
       title: PropTypes.string,

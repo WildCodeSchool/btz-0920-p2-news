@@ -7,6 +7,7 @@ function NewsList({ articles }) {
       <CategoryContainer
         key={item.category}
         category={item.category}
+        categoryParam={item.categoryParam}
         news={item.news}
       />
     );

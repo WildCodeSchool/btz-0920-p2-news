@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import { Card, CardText, NavItem } from 'reactstrap';
-
+import { CardImg, CardTitle, NavItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
 import './Categories.css';
@@ -9,47 +8,59 @@ const Categories = () => {
   const [navCat] = useState([
     {
       label: 'Business',
-      route: '/business',
       text: 'Business',
+      id: 'business',
+      image: 'https://i.imgur.com/MXLKTvh.jpeg',
     },
     {
       label: 'Santé',
-      route: '/santé',
       text: 'Santé',
+      id: 'health',
+      image: 'https://i.imgur.com/ERjA0hU.jpeg',
     },
     {
       label: 'Technologie',
-      route: '/technologie',
       text: 'Technologie',
+      id: 'technology',
+      image: 'https://i.imgur.com/2Zfp713.jpeg',
     },
     {
       label: 'Sport',
-      route: '/sport',
       text: 'Sport',
+      id: 'sports',
+      image: 'https://i.imgur.com/LTeung7.jpeg',
     },
     {
       label: 'Divertissement',
-      route: '/divertissement',
       text: 'Divertissement',
+      id: 'entertainment',
+      image: 'https://i.imgur.com/eIUYVwY.jpeg',
     },
     {
       label: 'Science',
-      route: '/science',
       text: 'Science',
+      id: 'science',
+      image: 'https://i.imgur.com/846KX8u.jpeg',
     },
   ]);
 
   return (
-    <div className="category">
+    <div
+      style={{
+        backgroundColor: 'white',
+        paddingBottom: '60px',
+      }}
+      className="category"
+    >
       {navCat.map((cat) => {
         return (
-          <Card className="cat-card">
-            <NavItem tag="h5" key={cat.route}>
-              <CardText tag={Link} to={cat.route}>
-                {cat.text}
-              </CardText>
+          <Link to={`categories/${cat.id}`}>
+            <CardImg className="image-cat" src={cat.image} alt={cat.text} />
+            <NavItem tag="h5" key={cat.label}>
+              {' '}
             </NavItem>
-          </Card>
+            <CardTitle className="text">{cat.text}</CardTitle>
+          </Link>
         );
       })}
     </div>

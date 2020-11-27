@@ -3,6 +3,10 @@
   background-size: cover;
 }
 
+.backgroundFooter p {
+  font-weight: bold;
+}
+
 .footerMain {
   display: flex;
   justify-content: space-between;
@@ -41,10 +45,6 @@
   margin-top: 40px;
   padding-bottom: 30px;
   text-align: center;
-}
-
-p {
-  font-weight: bold;
 }
 
 @media screen and (max-width: 758px) {
