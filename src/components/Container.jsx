@@ -13,9 +13,9 @@ function CategoryContainer({ category, categoryParam, news }) {
       <h2
         className="h2CatContainer"
         style={{
+          background: 'black',
           color: 'white',
           textAlign: 'center',
-          padding: '20px',
         }}
       >
         {category}
