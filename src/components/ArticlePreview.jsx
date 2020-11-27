@@ -13,7 +13,13 @@ function ArticlePreview({ image, title, url, index, categoryParam }) {
 
   return (
     <Col lg={index % 3 === 0 ? 12 : 6}>
-      <Card className="cardMain" inverse>
+      <Card
+        style={{
+          border: 0,
+        }}
+        className="cardMain"
+        inverse
+      >
         <CardImg
           src={image}
           alt={title}
