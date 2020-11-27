@@ -22,7 +22,7 @@
   height: 100%;
   /* max-width: 500px; */
   min-width: 250px;
-  box-shadow: 5px 5px 10px #545454;
+  box-shadow: 1px 1px 1px #545454;
 }
 
 .card-img {
