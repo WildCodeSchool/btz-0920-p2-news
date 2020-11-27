@@ -5,8 +5,18 @@ import Login from './Login';
 function MyProfile() {
   const [user, setUser] = useState('');
 
+  const handleLogout = () => {
+    setUser('');
+  };
+
   return (
-    <div>{user ? <Dashboard user={user} /> : <Login onSubmit={setUser} />}</div>
+    <div>
+      {user ? (
+        <Dashboard user={user} onLogout={handleLogout} />
+      ) : (
+        <Login onSubmit={setUser} />
+      )}
+    </div>
   );
 }
 

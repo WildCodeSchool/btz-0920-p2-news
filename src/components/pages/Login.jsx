@@ -44,10 +44,10 @@ function Login({ onSubmit }) {
           <FormGroup>
             <Label for="exampleEmail">Nom d&apos;utilisateur</Label>
             <Input
-              type="email"
-              name="email"
+              type="text"
+              name="id"
               id="exampleEmail"
-              placeholder="E-mail"
+              placeholder="ID / Utilisateur"
               value={name.name}
               onChange={(event) => handleChange(event)}
             />
