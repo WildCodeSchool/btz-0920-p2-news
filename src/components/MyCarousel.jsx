@@ -76,7 +76,10 @@ const MyCarousel = ({ articlesArray }) => {
             }}
           />
         </Link>
-        <CarouselCaption captionText={article.title} />
+        <CarouselCaption
+          style={{ fontSize: '2rem' }}
+          captionText={article.title}
+        />
       </CarouselItem>
     );
   });

@@ -13,15 +13,14 @@ function CategoryContainer({ category, categoryParam, news }) {
       <h2
         className="h2CatContainer"
         style={{
+          background: 'black',
           color: 'white',
           textAlign: 'center',
-          backgroundColor: '#F7D578',
-          padding: '20px',
         }}
       >
         {category}
       </h2>
-      <Row>
+      <Row style={{ marginRight: '10%', marginLeft: '10%' }}>
         {news
           .filter((article) => article.urlToImage)
           .map((article, i) => {
