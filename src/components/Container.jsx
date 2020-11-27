@@ -15,7 +15,6 @@ function CategoryContainer({ category, categoryParam, news }) {
         style={{
           color: 'white',
           textAlign: 'center',
-          backgroundColor: 'black',
           padding: '20px',
         }}
       >
