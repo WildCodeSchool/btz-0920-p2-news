@@ -4,8 +4,8 @@ const SearchPage = () => {
   return (
     <div
       style={{
-        paddingTop: '150px',
-        paddingBottom: '150px',
+        paddingTop: '250px',
+        paddingBottom: '250px',
         textAlign: 'center',
         marginRight: 'auto',
         marginLeft: 'auto',
