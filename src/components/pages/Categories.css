@@ -3,12 +3,14 @@
   max-width: 100%;
 }
 
-.cat-card {
-  padding-top: 90px;
-  padding-bottom: 90px;
+.text {
+  color: black;
+  background: white;
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
 }
 
-.cat-card {
-  padding-top: 90px;
-  padding-bottom: 90px;
+.image-cat {
+  position: relative;
 }

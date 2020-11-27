@@ -4,7 +4,12 @@ import ArticlePreview from './ArticlePreview';
 
 function CategoryContainer({ category, categoryParam, news }) {
   return (
-    <Container key={category}>
+    <Container
+      style={{
+        paddingBottom: '80px',
+      }}
+      key={category}
+    >
       <h2
         className="h2CatContainer"
         style={{
