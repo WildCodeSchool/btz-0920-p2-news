@@ -41,7 +41,14 @@ const Search = () => {
           onChange={(event) => handleChange(event)}
           placeholder="Ex: COVID-19"
         />
-        <Button type="submit">Rechercher</Button>
+        <Button
+          style={{
+            marginBottom: '20px',
+          }}
+          type="submit"
+        >
+          Rechercher
+        </Button>
       </Form>
       <NewsList articles={keyArticles} />
     </>

@@ -35,6 +35,7 @@ const Article = () => {
             top
             width="100%"
             src={item.urlToImage}
+            key={item.title}
             alt={item.title}
             onError={(e) => {
               e.target.src = 'https://i.imgur.com/lN0xhY3.jpg';
