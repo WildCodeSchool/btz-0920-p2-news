@@ -1,11 +1,14 @@
 import Axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { apiKey, apiUrl } from '../api';
+import categorieContext from '../contexts/categorieContext';
 import NewsList from './NewsList';
 
 const Pages = () => {
+  const { currentCat } = useContext(categorieContext);
   const { id } = useParams();
+  const label = currentCat.filter((cat) => cat.value === id);
 
   const [categoryArticle, setCategoryArticle] = useState([]);
 
@@ -14,7 +17,7 @@ const Pages = () => {
       (responses) => {
         const nextState = [
           {
-            category: id,
+            category: label[0].label,
             // categoryParam: id,
             news: responses.data.articles,
           },
@@ -24,8 +27,7 @@ const Pages = () => {
       }
     );
   }, []);
-  // eslint-disable-next-line no-console
-  console.log(categoryArticle);
+
   return <NewsList articles={categoryArticle} />;
 };
 
